@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoodFlix — Discover Movies by Mood</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🎬</span>
+        <span class="logo-text">Mood<span class="logo-accent">Flix</span></span>
+      </div>
+      <nav class="nav">
+        <a href="#" class="nav-link active">Discover</a>
+        <a href="#" class="nav-link">Trending</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero / Search Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Find movies for your <span class="gradient-text">mood</span></h1>
+      <p class="hero-sub">Live discovery from the open web. No database. Just vibes.</p>
+
+      <div class="search-box">
+        <div class="search-icon">🔍</div>
+        <input
+          id="search-input"
+          type="text"
+          class="search-input"
+          placeholder="Find a movie for your mood..."
+          autocomplete="off"
+        />
+        <button id="search-btn" class="search-btn">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters-section">
+    <div class="filters-wrap">
+
+      <div class="filter-group">
+        <span class="filter-label">🎭 Genre</span>
+        <div class="filter-tabs" id="genre-tabs">
+          <button class="tab-btn" data-value="">All</button>
+          <button class="tab-btn" data-value="comedy">Comedy</button>
+          <button class="tab-btn" data-value="drama">Drama</button>
+          <button class="tab-btn" data-value="action">Action</button>
+          <button class="tab-btn" data-value="horror">Horror</button>
+          <button class="tab-btn" data-value="sci-fi">Sci-Fi</button>
+          <button class="tab-btn" data-value="romance">Romance</button>
+          <button class="tab-btn" data-value="thriller">Thriller</button>
+          <button class="tab-btn" data-value="animation">Animation</button>
+          <button class="tab-btn" data-value="documentary">Documentary</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">😊 Mood</span>
+        <div class="filter-tabs" id="mood-tabs">
+          <button class="tab-btn" data-value="">Any</button>
+          <button class="tab-btn" data-value="happy">Happy</button>
+          <button class="tab-btn" data-value="relaxed">Relaxed</button>
+          <button class="tab-btn" data-value="romantic">Romantic</button>
+          <button class="tab-btn" data-value="thoughtful">Thoughtful</button>
+          <button class="tab-btn" data-value="dark">Dark</button>
+          <button class="tab-btn" data-value="inspirational">Inspirational</button>
+          <button class="tab-btn" data-value="adventurous">Adventurous</button>
+          <button class="tab-btn" data-value="emotional">Emotional</button>
+          <button class="tab-btn" data-value="cozy">Cozy</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="results-section" id="results-section" style="display:none">
+    <div class="results-header">
+      <h2 class="results-title" id="results-title">Results</h2>
+      <span class="results-count" id="results-count"></span>
+    </div>
+    <div class="movie-grid" id="movie-grid"></div>
+    <div class="no-results" id="no-results" style="display:none">
+      <span class="no-results-icon">🎞️</span>
+      <p>No movies found for this combination. Try different filters.</p>
+    </div>
+  </section>
+
+  <!-- Skeleton loader -->
+  <section class="results-section" id="skeleton-section" style="display:none">
+    <div class="movie-grid skeleton-grid" id="skeleton-grid"></div>
+  </section>
+
+  <!-- Error Banner -->
+  <div class="error-banner" id="error-banner" style="display:none">
+    <span>⚠️</span> <span id="error-msg">Something went wrong. Try again.</span>
+  </div>
+
+  <!-- Movie Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div class="modal-inner" id="modal-inner"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
